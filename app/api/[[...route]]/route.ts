@@ -26,7 +26,12 @@ app
       const { name, userId } = c.req.valid("json");
       return c.json({});
     }
-  );
+  )
+  .get("/test", (c) => {
+    return c.json({
+      message: "test",
+    });
+  });
 
 export const GET = handle(app);
 export const POST = handle(app);
